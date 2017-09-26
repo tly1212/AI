@@ -1,0 +1,36 @@
+2a: 
+(1)	my heuristic function h(n) is defined as following:
+	h(n) += c1*4, where c1 means the number of 4 in order consecutive "query#" appeared in hypertext
+	h(n) += c1*3, where c1 means the number of 3 in order consecutive "query#" appeared in hypertext
+	h(n) += c1*2, where c1 means the number of 2 in order consecutive "query#" appeared in hypertext
+	h(n) += c1*1, where c1 means the number of "query#" appeared in hypertext
+(b) my function is admissible. Because I only applied feature (b) and feature (c) in my function. Also, the proportion numbers, e.g., 4, 3, 2, 1, are chosen randomly, which means each part of them are part of a relax problem. So h*(n) will always greater or equal to h(n), then my huristic function is admissible.
+
+2c:
+	My heuristic function works very well, as from the experimental results below we can find that the "best" and "beam" methods find the goal with less nodes visited, eventhough some times the "beam" method can not find the goal.
+
+Lab experimental results:
+
+intranet#   breadth		depth		best		beam
+--------------------------------------------------------
+    1        91/4    	58/15    	26/7		38/4
+    5        88/8		42/10		33/9		22/ did not find the goal
+    7        56/6		12/9		24/6 		22/ did not find the goal
+note: in the table above #1/#2(e.g.,91/4) means visted #1(91) nodes to find the goal and the length of the path is #2(4).
+		
+Paths:
+Intranet1 breadth: page50.html->page99.html->page29.html->page18.html->page1.html
+Intranet1 depth: page50.html->page83.html->page2.html->page79.html->page87.html->page93.html->page68.html->page30.html->page84.html->page42.html->page25.html->page78.html->page39.html->page60.html->page23.html->page1.html
+Intranet1 best: page50.html->page83.html->page2.html->page79.html->page87.html->page69.html->page14.html->page1.html
+Intranet1 beam: page50.html->page99.html->page88.html->page98.html->page1.html
+
+Intranet5 breadth: page62.html->page72.html->page95.html->page96.html->page87.html->page89.html->page99.html->page40.html->page1.html
+Intranet5 depth: page62.html->page72.html->page95.html->page7.html->page48.html->page68.html->page97.html->page5.html->page99.html->page40.html->page1.html
+Intranet5 best: page62.html->page72.html->page95.html->page35.html->page42.html->page19.html->page88.html->page99.html->page40.html->page1.html
+Intranet5 beam: did not find the goal
+
+Intranet7 breadth: page86.html->page61.html->page62.html->page57.html->page71.html->page48.html->page1.html
+Intranet7 depth: page86.html->page78.html->page11.html->page60.html->page39.html->page90.html->page57.html->page71.html->page48.html->page1.html
+Intranet7 best: page86.html->page61.html->page62.html->page57.html->page71.html->page48.html->page1.html
+Intranet7 beam: did not find the goal
+	
