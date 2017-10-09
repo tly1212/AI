@@ -1,0 +1,2 @@
+1. As I increse search depth, the agent can make better decision to take cleverer movements.
+2. Improving evaleation function makes the agent choose the cells with high weights more, and less likely to choose cells with low weights.
